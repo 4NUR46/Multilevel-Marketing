@@ -25,7 +25,9 @@ SECRET_KEY = '$q^4cpsekn0*$2u=h^^04dt9jpqfi^%xp9yr!^vldn(vng!!n*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ewebgo.herokuapp.com'
+]
 
 
 # Application definition

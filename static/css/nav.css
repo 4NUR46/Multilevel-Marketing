@@ -1,0 +1,19 @@
+/* .navbar{
+position: fixed;
+top: 0;
+width: 90%;
+margin:center;
+}
+.navbar ul{
+text-style-type:none;
+}
+.navbar ul li{
+display:inline-block;
+}
+.navbar ul li a{
+text-decoration:none;
+} */
+
+body{
+background:  linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
+}

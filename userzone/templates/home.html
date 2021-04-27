@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'Images/favico.png' %}" type="image/gif" sizes="16x16">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--    External css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/designDemo.css' %}">
+
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/ext.css' %}">-->
+    <title>Ewebgo:User Home</title>
+    <style>
+        #position{
+            position:bottom;
+        }
+    </style>
+</head>
+<body class="bd-gradient-primary">
+{% load static %}
+
+  <!--NavBar-->
+<div class="sticky-top">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'home' %}">Ewebgo User Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'userProfile' %}">User Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Logout' %}">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'books' %}">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cart' %}">Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'About' %}">About</a>
+      </li>
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          Dropdown-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="#">Action</a>-->
+<!--          <a class="dropdown-item" href="#">Another action</a>-->
+<!--          <div class="dropdown-divider"></div>-->
+<!--          <a class="dropdown-item" href="#">Something else here</a>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--      </li>-->
+    </ul>
+<!--    <form class="form-inline my-2 my-lg-0">-->
+<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--    </form>-->
+  </div>
+</nav>
+</div>
+
+  <!--crousal-->
+
+<!--<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">-->
+<!--  <ol class="carousel-indicators">-->
+<!--    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>-->
+<!--    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>-->
+<!--    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>-->
+<!--  </ol>-->
+<!--  <div class="carousel-inner">-->
+<!--    <div class="carousel-item active">-->
+<!--      <img src="{% static 'images/slider/slide.png' %}" class="d-block w-100" alt="...">-->
+<!--      <div class="carousel-caption d-none d-md-block">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="{% static 'images/slider/slide1.png' %}" class="d-block w-100" alt="...">-->
+<!--      <div class="carousel-caption d-none d-md-block">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="{% static 'images/slider/slide2.png' %}" class="d-block w-100" alt="...">-->
+<!--      <div class="carousel-caption d-none d-md-block">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">-->
+<!--    <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--    <span class="sr-only">Previous</span>-->
+<!--  </a>-->
+<!--  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">-->
+<!--    <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--    <span class="sr-only">Next</span>-->
+<!--  </a>-->
+<!--</div>-->
+<!--<img src="{% static 'images/slider/pic3.png' %}" class="img-fluid" alt="Responsive image" style=" margin:1em 0em 1em 0em;">-->
+
+  <!--crousal-->
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="/note8"><img class="d-block w-100" src="static/images/redmi note 8 banner.jpg" alt="First slide"></a>
+    </div>
+    <div class="carousel-item">
+     <a href="/vivou20"> <img class="d-block w-100" src="static/images/vivo u10.jpg" alt="Second slide"></a>
+    </div>
+<!--       <div class="carousel-item ">-->
+<!--      <a href="/books"><img class="d-block w-100" src="static/images/books_banner.jpg" alt="Third slide" height="500px"></a>-->
+<!--    </div>-->
+    <div class="carousel-item">
+        <a href="/redmi8"> <img class="d-block w-100" src="static/images/note8.jpg" alt="Fourth slide"></a>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div><br>
+ <!--slide banner ends here-->
+
+
+<!--    {% if message %}<center><p style="margin:center; color:blue;font-size:1.5rem;">{{message}}</p></center>{% endif %}-->
+
+
+<!--Items list-->
+
+<!--    Items-->
+{% load static %}
+    <section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Welcome &nbsp;in &nbsp;Ewebgo</h2>
+<!--						<p> Here you can get item of your choice </p>-->
+					</header>
+					<div class="highlights">
+
+
+<!--                        Items Direct from database in loop-->
+                        {% for n in item %}
+						<section>
+							<div class="content">
+								<header>
+									<img src="static/Uploaded/{{n.Item_Image}}" class="label" width="auto" height="180px" class="card-img-top" alt="...">
+									<h3><b>{{n.Item_name}}</b></h3>
+								</header>
+									<h3>Price : <b>{{n.Price}}</b></h3>
+                                <form method="post" action="{% url 'ItemDetails' %}">
+      {% csrf_token %}
+                                    <input type="hidden" name="it" value="{{n.Item_id}}">
+                                    <input type="submit" value="Details" class="btn btn-primary btn-block" style="text-align:center; margin:center; min-height:25px;">
+                                </form>
+                                <form method="post" action="{% url 'Add_Item' %}">
+                                {% csrf_token %}
+        							<input type="hidden" name="it" value="{{n.Item_id}}">
+                                    <input type="submit" value="Add Cart" class="btn btn-primary btn-block" style="text-align:center; margin:center; min-height:25px;">
+                                </form>
+                            </div>
+						</section>
+                        {% endfor %}
+
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/oneplus8lite.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>One plus 8 lite</b></h3>
+								</header>
+									<h3>Price : <b>35,000.00</b></h3>
+								      <a href="/onelite" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Details</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/poco x2.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Poco X2</b></h3>
+								</header>
+									<h3>Price : <b>15,999.00</b></h3>
+								      <a href="/pocox2" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Details</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/redmik20.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Redmi K20 Pro</b></h3>
+								</header>
+									<h3>Price : <b>25,000.00</b></h3>
+								      <a href="/k20pro" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Details</a>
+    								</div>
+						</section>
+
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/hpg3x.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Hp Pavilion G3x</b></h3>
+								</header>
+									<h3>Price : <b>48,899.00</b></h3>
+								      <a href="/hppav" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Details</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/asus vivobook.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Asus Vivo Book 12</b></h3>
+								</header>
+									<h3>Price : <b>30,899.00</b></h3>
+								      <a href="/asusbook" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Details</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/k20.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Redmi K20</b></h3>
+								</header>
+									<h3>Price : <b>18,999.00</b></h3>
+								      <a href="/k20" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Details</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/motorazer.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Moto Razer</b></h3>
+								</header>
+									<h3>Price : <b>124,999.00</b></h3>
+								      <a href="/motorazer" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Details</a>
+    								</div>
+						</section>
+
+
+					</div>
+				</div>
+			</section>
+
+
+{% load static %}
+<!--<img src="{% static 'images/slider/pic3.png' %}" class="img-fluid" alt="Responsive image" style=" margin:1em 0em 1em 0em;">-->
+<center><img src="static/images/laptop.jpeg" class="img-fluid" alt="Responsive image" style=" margin:1em 0em 1em 0em;">
+</center>
+
+
+
+<!--Item list-->
+<!--<div class="row">-->
+<!--    {% csrf_token %}-->
+<!--    {% for n in item %}-->
+
+
+<!--  <div class="card" style="width: 12rem; margin:2em 3em 2em 7em;">-->
+<!--      <form method="post" action="{% url 'ItemDetails' %}">-->
+<!--      {% csrf_token %}-->
+<!--          <input type="hidden" name="it" value="{{n.Item_id}}">-->
+<!--          <button style="decoration:none;background-color:white;">-->
+<!--  <img src="{% static 'Uploaded/' %}{{n.Item_Image}}" class="img-thumbnail" style="min-height:160px;" alt="Product image">-->
+<!--  </button>-->
+<!--      </form>-->
+<!--          <div class="card-body">-->
+<!--&lt;!&ndash;              <form method="post" action="{% url 'ItemDetails' %}">&ndash;&gt;-->
+<!--&lt;!&ndash;      {% csrf_token %}&ndash;&gt;-->
+<!--    <h5 class="card-title" style="text-align:center;min-height:50px;">{{n.Item_name}}</h5>-->
+<!--    <p class="card-text" style="min-height:25px;">Price : <b>{{n.Price}}</b></p>-->
+<!--    <p class="card-text" style="min-height:25px;">Author : {{n.Author}}</p>-->
+<!--&lt;!&ndash;                  <input type="hidden" name="it" value="{{n.Item_id}}">&ndash;&gt;-->
+<!--&lt;!&ndash;                  </form>&ndash;&gt;-->
+<!--    <div>-->
+<!--        <form method="post" action="{% url 'Add_Item' %}">-->
+<!--      {% csrf_token %}-->
+<!--        <input type="hidden" name="it" value="{{n.Item_id}}">-->
+<!--      <input type="submit" value="Add Cart" class="btn btn-primary btn-block" style="text-align:center; margin:center; min-height:25px;">-->
+<!--    </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--    </form>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+<!--JavaScript Link-->
+
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+
+
+<!-- //footer -->
+
+<!-- copyright -->
+<div class="copyright" style="background-color:grey;">
+	<div class="container py-4">
+		<div class=" text-center">
+			<p>© 2020 All Rights Reserved | Design by <b> kiot students</b> </p>
+		</div>
+	</div>
+</div>
+<!-- //copyright -->
+
+
+<!--    &lt;!&ndash; Optional JavaScript &ndash;&gt;-->
+<!--    &lt;!&ndash; jQuery first, then Popper.js, then Bootstrap JS &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>-->
+ <script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+alert("item added in cart")
+});
+</script>
+
+<!--&lt;!&ndash;Footer&ndash;&gt;-->
+<!--<footer class="text-gray-700 body-font">-->
+<!--  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">-->
+<!--    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">-->
+<!--        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>-->
+<!--      </svg>-->
+<!--      <span class="ml-3 text-xl">Ewebgo</span>-->
+<!--    </a>-->
+<!--    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4" style="color:black">© 2020 tailblocks —-->
+<!--      <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@knyttneve</a>-->
+<!--    </p>-->
+<!--    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">-->
+<!--      <a class="text-gray-500">-->
+<!--        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+<!--          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--      <a class="ml-3 text-gray-500">-->
+<!--        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+<!--          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--      <a class="ml-3 text-gray-500">-->
+<!--        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+<!--          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>-->
+<!--          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--      <a class="ml-3 text-gray-500">-->
+<!--        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">-->
+<!--          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>-->
+<!--          <circle cx="4" cy="4" r="2" stroke="none"></circle>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--    </span>-->
+<!--  </div>-->
+<!--</footer>-->
+<!--JavaScript Link-->
+{% load static %}
+			<script src="{% static 'JavaScript/designDemo.js' %}"></script>
+<!--			<script src="JavaScript/designDemo.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

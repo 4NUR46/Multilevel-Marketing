@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/designDemo.css' %}">
+
+    <title>Ewebgo:Online Store</title>
+      </head>
+  <body>
+  {% load static %}
+
+<!--  Nav Bar-->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/home">E-webgo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'About' %}">About</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Products
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"></a>
+          <a class="dropdown-item" href="#">Electronics</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Books</a>
+        </div>
+      </li>
+
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="/checkout">Cart(<span id="cart">0</span>)</a>-->
+<!--      </li>-->
+    </ul>
+<!--    <form class="form-inline my-2 my-lg-0">-->
+<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--    </form>-->
+  </div>
+</nav>
+
+<!--   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>-->
+
+  <a href="/books">
+{% load static %}
+<!--<img src="{% static 'images/slider/pic3.png' %}" class="img-fluid" alt="Responsive image" style=" margin:1em 0em 1em 0em;">-->
+<center><img src="static/images/books.jpg" class="img-fluid" alt="Responsive image" style=" margin:1em 0em 1em 0em;">
+</center>
+</a>
+
+<!--    <div id="carding" style="margin-top:15px; margin-left:20px;">-->
+
+<!--&lt;!&ndash;           <div class="card" style="width: 14rem;float:left; background-color:yellow; ">&ndash;&gt;-->
+<!--&lt;!&ndash;  <img src=" static/images/java9.jpg" width="50px" height="195px" class="card-img-top" alt="...">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="card-body">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h6 class="card-title">java book</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;    <a href="static/learn/java9.pdf"><p class="card-text">Download</p></a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;           </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;           <div class="card" style="width: 14rem;float:left; background-color:cyan; ">&ndash;&gt;-->
+<!--&lt;!&ndash;  <img src=" static/images/datamining.jpg" width="50px" height="195px" class="card-img-top" alt="...">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="card-body">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h6 class="card-title">Data Mining Book </h6>&ndash;&gt;-->
+<!--&lt;!&ndash;    <a href="static/learn/datamin.pdf"><p class="card-text">Download</p></a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;           </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <div class="card" style="width: 14rem;float:left; background-color:orange; ">&ndash;&gt;-->
+<!--&lt;!&ndash;  <img src=" static/images/php.jpg" width="50px" height="195px" class="card-img-top" alt="...">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="card-body">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h6 class="card-title">php book</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;    <a href="static/learn/php.pdf"><p class="card-text">Download</p></a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;           </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="card" style="width: 14rem;float:left; background-color:yellow; ">&ndash;&gt;-->
+<!--&lt;!&ndash;  <img src=" static/images/kotlin.jpg" width="50px" height="195px" class="card-img-top" alt="...">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="card-body">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h6 class="card-title">kotlin book</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;    <a href="static/learn/kot.pdf"><p class="card-text">Download</p></a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;           </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <div class="card" style="width: 14rem;float:left; background-color:cyan; ">&ndash;&gt;-->
+<!--&lt;!&ndash;  <img src=" static/images/linux.jpg" width="50px" height="195px" class="card-img-top" alt="...">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="card-body">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h6 class="card-title">Linux book</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;    <a href="static/learn/linux.pdf"><p class="card-text">Download</p></a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;           </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <div class="card" style="width: 12rem;float:left; background-color:orange; ">&ndash;&gt;-->
+<!--&lt;!&ndash;  <img src=" static/images/python.jpg" width="50px" height="195px" class="card-img-top" alt="...">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="card-body">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h6 class="card-title">Python book</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;    <a href="static/learn/python.pdf"><p class="card-text">Download</p></a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;           </div>&ndash;&gt;-->
+
+<!--       </div>-->
+
+<!--  <br>-->
+
+<!--  </br>-->
+
+<!--  <div style="margin-top:50px;">-->
+<!--    <a href=""><img src="static/images/haskell.jpg" class="rounded float-left" style="width: 27rem; margin-left:15px; margin-bottom:10px; margin-top:10px; "  alt="..."></a>-->
+<!--      <a href=""><img src="static/images/c.jpg" class="rounded float-right" style="width:27rem; margin-left:17px; margin-bottom:10px; margin-top:10px;"  alt="..."></a>-->
+<!--      <a href=""> <img src="static/images/pythonlec.jpg" class="rounded float-right" style="width: 27rem; margin-left:1px; margin-bottom:10px; margin-top:10px; "  alt="..."></a>-->
+<!--  </div>-->
+
+<!--     <a href=""> <img src="static/images/ebook.jpg" class="rounded float-left" style="width: 65rem;  margin-bottom:10px; margin-left:150px; margin-top:30px;"  ></a><br>-->
+
+<!--        <a href="static/learn/wordpress.pdf"> <img src="static/images/wordpress.jpg" class="rounded float-left" style="width: 40rem;  margin-bottom:10px; margin-left:10px"  ></a>-->
+<!--        <a href="static/learn/digital.pdf"> <img src="static/images/mark.jpg" class="rounded float-right" style="width: 43rem;  margin-bottom:10px;margin-right:10px"  ></a>-->
+<!--  -->
+
+
+
+
+<!--    Items-->
+{% load static %}
+    <section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Welcome &nbsp;in &nbsp;Ewebgo &nbsp;Learning</h2>
+						<p> Here you can get item of your choice </p>
+					</header>
+					<div class="highlights">
+
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/java9.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Java Programming</b></h3>
+								</header>
+									<h3>Price : <b>Free</b></h3>
+								      <a href="static/learn/java9.pdf" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Read</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/datamining.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Data Mining</b></h3>
+								</header>
+									<h3>Price : <b>Free</b></h3>
+								      <a href="static/learn/datamin.pdf" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Read</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/php.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>PHP 5 </b></h3>
+								</header>
+									<h3>Price : <b>Free</b></h3>
+								      <a href="static/learn/php.pdf" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Read</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/kotlin.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Kotlin</b></h3>
+								</header>
+									<h3>Price : <b>Free</b></h3>
+								      <a href="static/learn/kot.pdf" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Read</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/linux.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Ubuntu Linux</b></h3>
+								</header>
+									<h3>Price : <b>Free</b></h3>
+								      <a href="static/learn/linux.pdf" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Read</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/python.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Python Web Scraping</b></h3>
+								</header>
+									<h3>Price : <b>Free</b></h3>
+								      <a href="static/learn/python.pdf" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Read</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/wordpress.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Wordpress Theme Development</b></h3>
+								</header>
+									<h3>Price : <b>Free</b></h3>
+								      <a href="static/learn/wordpress.pdf" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Read</a>
+    								</div>
+						</section>
+                        <section>
+							<div class="content">
+								<header>
+									<img src="static/images/mark.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">
+									<h3><b>Social Media Marketing</b></h3>
+								</header>
+									<h3>Price : <b>Free</b></h3>
+								      <a href="static/learn/digital.pdf" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Read</a>
+    								</div>
+						</section>
+
+
+<!--&lt;!&ndash;                        Items Direct from database in loop&ndash;&gt;-->
+<!--                        {% for n in item %}-->
+<!--						<section>-->
+<!--							<div class="content">-->
+<!--								<header>-->
+<!--									<img src="static/Uploaded/{{n.Item_Image}}" class="label" width="250px" height="180px" class="card-img-top" alt="...">-->
+<!--									<h3><b>{{n.Item_name}}</b></h3>-->
+<!--								</header>-->
+<!--									<h3>Price : <b>{{n.Price}}</b></h3>-->
+<!--                                <form method="post" action="{% url 'ItemDetails' %}">-->
+<!--      {% csrf_token %}-->
+<!--                                    <input type="hidden" name="it" value="{{n.Item_id}}">-->
+<!--                                    <input type="submit" value="Details" class="btn btn-primary btn-block" style="text-align:center; margin:center; min-height:25px;">-->
+<!--                                </form>-->
+<!--                                <form method="post" action="{% url 'Add_It' %}">-->
+<!--                                {% csrf_token %}-->
+<!--        <input type="hidden" name="it" value="{{n.Item_id}}">-->
+<!--&lt;!&ndash;                                <a href="/k20" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center; margin:center; min-height:25px;">Details</a>&ndash;&gt;-->
+<!--                                    <input type="submit" value="Add Cart" class="btn btn-primary btn-block" style="text-align:center; margin:center; min-height:25px;">-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--						</section>-->
+<!--                        {% endfor %}-->
+					</div>
+				</div>
+			</section>
+
+<!--  <br/>-->
+<!--  <center><h3>Videos Lecturse</h3></center>-->
+{% load static %}
+    <section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Videos Lecturse &nbsp;Learning</h2>
+<!--						<p> Here you can get item of your choice </p>-->
+					</header>
+					<div width="auto">
+
+                        <section>
+							<div class="content">
+								<header>
+									<video width='400' class="label" controls>
+										{% load static %}
+										{% csrf_token %}
+									<source src='static/learn/videos/Python 2 versus Python 3.mp4' type='video/mp4'>
+										Your browser does not support the video tag.
+									</video>
+<!--									<img src="static/images/mark.jpg" class="label" width="250px" height="180px" class="card-img-top" alt="...">-->
+									<h3><b>Python 2 vs Python 3</b></h3>
+								</header>
+							</div>
+						</section>
+
+
+					</div>
+				</div>
+			</section>
+
+
+
+
+<!-- //footer -->
+
+<!-- copyright -->
+<div class="copyright" style="background-color:grey;">
+	<div class="container py-4">
+		<div class=" text-center">
+			<p>© 2020 All Rights Reserved | Design by <b> kiot students</b> </p>
+		</div>
+	</div>
+</div>
+<!-- //copyright -->
+
+
+<!--    &lt;!&ndash; Optional JavaScript &ndash;&gt;-->
+<!--    &lt;!&ndash; jQuery first, then Popper.js, then Bootstrap JS &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>-->
+ <script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+alert("item added in cart")
+});
+</script>
+
+<!--&lt;!&ndash;Footer&ndash;&gt;-->
+<!--<footer class="text-gray-700 body-font">-->
+<!--  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">-->
+<!--    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">-->
+<!--        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>-->
+<!--      </svg>-->
+<!--      <span class="ml-3 text-xl">Ewebgo</span>-->
+<!--    </a>-->
+<!--    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4" style="color:black">© 2020 tailblocks —-->
+<!--      <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@knyttneve</a>-->
+<!--    </p>-->
+<!--    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">-->
+<!--      <a class="text-gray-500">-->
+<!--        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+<!--          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--      <a class="ml-3 text-gray-500">-->
+<!--        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+<!--          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--      <a class="ml-3 text-gray-500">-->
+<!--        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+<!--          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>-->
+<!--          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--      <a class="ml-3 text-gray-500">-->
+<!--        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">-->
+<!--          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>-->
+<!--          <circle cx="4" cy="4" r="2" stroke="none"></circle>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--    </span>-->
+<!--  </div>-->
+<!--</footer>-->
+<!--JavaScript Link-->
+{% load static %}
+			<script src="{% static 'JavaScript/designDemo.js' %}"></script>
+<!--			<script src="JavaScript/designDemo.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </body>
+</html>

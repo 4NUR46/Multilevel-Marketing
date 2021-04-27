@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'Images/favico.png' %}" type="image/gif" sizes="16x16">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--    External css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+      <!--<link rel="stylesheet" type="text/css" href="{% static 'css/ext.css' %}">-->
+    <title>Ewebgo: Item Details</title>
+    <style>
+        #position{
+            position:bottom;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="sticky-top">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index">Ewebgo Item Detalis</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'userProfile' %}">User Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Logout' %}">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Category' %}">Catagory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cart' %}">Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'About' %}">About</a>
+      </li>
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          Dropdown-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="#">Action</a>-->
+<!--          <a class="dropdown-item" href="#">Another action</a>-->
+<!--          <div class="dropdown-divider"></div>-->
+<!--          <a class="dropdown-item" href="#">Something else here</a>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--      </li>-->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+
+<div class="main">
+        <div class="container">
+            {% for n in dtl %}
+            <div class="signup-content">
+                <div class="signup-img">
+
+    <section class="wrapper">
+				<div class="inner">
+					<div class="highlights">
+
+<!--                        Items Direct from database in loop-->
+						<section>
+							<div class="content">
+								<header><center>
+									<img src="static/Uploaded/{{n.Item_Image}}" class="label" width="auto" height="180px" class="card-img-top" alt="...">
+									<h3><b>{{n.Item_name}}</b></h3></center>
+                                </header>
+<!--									<h3>Price : <b>{{n.Price}}</b></h3>-->
+<!--                                <form method="post" action="{% url 'ItemDetails' %}">-->
+<!--      {% csrf_token %}-->
+<!--                                    <input type="hidden" name="it" value="{{n.Item_id}}">-->
+<!--                                    <input type="submit" value="Details" class="btn btn-primary btn-block" style="text-align:center; margin:center; min-height:25px;">-->
+<!--                                </form>-->
+<!--                                <form method="post" action="{% url 'Ad_Itm' %}">-->
+<!--                                {% csrf_token %}-->
+<!--        <input type="hidden" name="it" value="{{n.Item_id}}">-->
+<!--                                    <input type="submit" value="Add Cart" class="btn btn-primary btn-block" style="text-align:center; margin:center; min-height:25px;">-->
+<!--                                </form>-->
+                            </div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+<!--                    <img src="{% static 'Uploaded/' %}{{n.Item_Image}}" alt="">-->
+                </div>
+                <div class="signup-form">
+                    <form method="POST" action="{% url 'Add_Item' %}" class="register-form" id="register-form">
+                        {% csrf_token %}
+                        <h2>{{n.Item_name}}</h2>
+                        <h2>{{n.Price}}</h2>
+<!--                        <div class="form-radio">-->
+<!--                            <label for="Color" class="radio-label">Color :</label>-->
+<!--                            <div class="form-radio-item">-->
+<!--                                <input type="radio" name="Color" id="male" checked>-->
+<!--                                <label for="male">Blue</label>-->
+<!--                                <span class="check"></span>-->
+<!--                            </div>-->
+<!--                            <div class="form-radio-item">-->
+<!--                                <input type="radio" name="Color" id="female">-->
+<!--                                <label for="female">Red</label>-->
+<!--                                <span class="check"></span>-->
+<!--                            </div>-->
+<!--                            <div class="form-radio-item">-->
+<!--                                <input type="radio" name="Color" id="Black">-->
+<!--                                <label for="Black">Black</label>-->
+<!--                                <span class="check"></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                            <div class="form-group">
+                                <label for="name">Item Specifiation : </label>
+                                <label id="name">{{n.Specifications}}</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="father_name">Description : </label>
+                                <label name="father_name">{{n.Descriptions}}</label>
+                            </div>
+                        <input type="hidden" name="it" value="{{n.Item_id}}">
+                        <div class="form-submit">
+                            <input type="submit" value="Add To Cart" class="submit" name="Add" id="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{% static 'css/detail.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

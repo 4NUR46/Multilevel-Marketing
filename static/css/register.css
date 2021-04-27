@@ -1,0 +1,66 @@
+#position{
+            position:bottom;
+        }
+        /*
+        .label-input100{
+            font-size:20px;
+        }
+        */
+
+        #circle {
+            width: 100px;
+            height: 100px;;
+            background:url('static/UserImages/gUser.png');
+            //margin-left:105px;
+            margin:0px 0px 0px 105px;
+            object-fit:contain;
+            float:left;
+            background-repeat:no-repeat;
+            background-size:cover;
+            //opacity:0.2;
+            //background-image:linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+            //border:1px solid red;
+            //border-radius:10%;
+        }
+        #circles {
+            width:100%;
+            height:100%;
+            background:url('static/UserImages/mUser.png');
+            //margin-left:75px;
+            margin:0.3px 0px 0px 72px;
+            object-fit:contain;
+            float:left;
+            background-repeat:no-repeat;
+            background-size:cover;
+            //opacity:0.2;
+            //background-image:linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+            //border:1px solid blue;
+            //border-radius:10%;
+        }
+
+        #profile{
+            width:100%;
+            height:150px;
+            //background:url('static/UserImages/wave1.png');
+            margin-bottom:2px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            //object-fit: contain;
+            //object-fit: none;
+            object-fit: scale-up;
+            //object-fit:contain;
+            //background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+            //border:1px solid blue;
+            //border-radius:15px;
+        }
+        .imgFit{
+            object-fit:contain;
+            object-fit:cover;
+        }
+        h4{
+            font-weight:bold;
+            //font-family:serif;
+            //font-family: 'Libre Baskerville', serif;
+            font-family:'Alice';
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');

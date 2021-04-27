@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'Images/favico.png' %}" type="image/gif" sizes="16x16">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--    External css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+      <!--<link rel="stylesheet" type="text/css" href="{% static 'css/ext.css' %}">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/AddCart.css' %}">
+
+    <title>Ewebgo:Admin</title>
+    <style>
+        #position{
+            position:bottom;
+        }
+    </style>
+</head>
+<body>
+
+<!--Nav Bar-->
+<div class="sticky-top">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index">Ewebgo Update Item</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'adminhome' %}">Admin Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'adminProfile' %}">Admin Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'AddItem' %}">Add Items</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'notifications' %}">Notifications</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'updateItem' %}">UpdateItem</a>
+      </li>
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          Dropdown-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="#">Action</a>-->
+<!--          <a class="dropdown-item" href="#">Another action</a>-->
+<!--          <div class="dropdown-divider"></div>-->
+<!--          <a class="dropdown-item" href="#">Something else here</a>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--      </li>-->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+
+            {% if message %}<center><p style="margin:center; color:blue;font-size:1.5rem;">{{message}}</p></center>{% endif %}
+
+
+{% for n in itms %}
+{% load static %}
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form" action="{% url 'update' %}" method="post" enctype="multipart/form-data">
+            {% if message %}<center><p style="margin:center; color:blue;font-size:1.5rem;">{{message}}</p></center>{% endif %}
+            <span class="contact100-form-title">
+                Update Items
+            </span>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Item Name : </span>
+                <input class="input100" type="text" name="itemName" value="{{n.Item_name}}" placeholder="Item Name" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Author : </span>
+                <input class="input100" type="text" name="authorName" value="{{n.Author}}" placeholder="Author Name" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Item Type : </span>
+                <input class="input100" type="text" name="itemType" value="{{n.Item_type}}"  placeholder="Item Type">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Item Price : </span>
+                <input class="input100" type="text" name="itemPrice" value="{{n.Price}}"  placeholder="Item Price" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Total Quantity : </span>
+                <input class="input100" type="text" name="quantity" value="{{n.Quantity}}"  placeholder="Quantity" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Seller Name : </span>
+                <input class="input100" type="text" name="sellerName" value="{{n.Sellars_Name}}"  placeholder="Seller Name" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                <span class="label-input100">Seller Address : </span>
+                <textarea class="input100" name="sellerAddress" placeholder="Seller Address">{{n.Sellars_Shop_Address}}</textarea>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                <span class="label-input100">Description : </span>
+                <textarea class="input100" name="description"  placeholder="Item's Description">{{n.Descriptions}}</textarea>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                <span class="label-input100">Specification : </span>
+                <textarea class="input100" name="specifications" placeholder="Item's Specifications">{{n.Specifications}}</textarea>
+                <span class="focus-input100"></span>
+            </div>
+
+            {% csrf_token %}
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Item's Display Image : </span>
+                  <img src="{% static 'Uploaded/' %}{{n.Item_Image}}" class="img-thumbnail" style="min-height:160px;" alt="Product image">
+                <input class="input100" type="file" name="MyFile1" >{{n.Item_Image}}
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Item Extra Image : </span>
+                  <img src="{% static 'Uploaded/' %}{{n.Extra_Images1}}" class="img-thumbnail" style="min-height:160px;" alt="No more Product image">
+                <input class="input100" type="file" name="MyFile2" alt="No File Saved">{{n.Extra_Images1}}
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Item Extra Image : </span>
+                  <img src="{% static 'Uploaded/' %}{{n.Extra_Images2}}" class="img-thumbnail" style="min-height:160px;" alt="No more Product image">
+                <input class="input100" type="file" name="MyFile3" alt="No File Saved">{{n.Extra_Images2}}
+                <span class="focus-input100"></span>
+            </div>
+
+            <input type="hidden" name="it" value="{{n.Item_id}}"/>
+            <input type="hidden" name="pnm" value="{{n.Item_name}}"/>
+
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button class="contact100-form-btn">
+                        <span>
+                            Update
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endfor %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

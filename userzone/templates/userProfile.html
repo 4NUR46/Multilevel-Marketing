@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/AddCart.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">      <!--<link rel="stylesheet" type="text/css" href="{% static 'css/ext.css' %}">-->
+    <link href='https://fonts.googleapis.com/css?family=Alice' rel='stylesheet'>
+    <title>Ewebgo:User Profile</title>
+    <style>
+        #position{
+            position:bottom;
+        }
+        /*
+        .label-input100{
+            font-size:20px;
+        }
+        */
+
+        /*#circle{
+            width: 100px;
+            height: 100px;
+            background:url('static/UserImages/{{u.Image}}');
+            //background:red;
+            margin:25px 0px 0px 33%;
+            object-fit:contain;
+            float:left;
+            background-repeat:no-repeat;
+            background-size:cover;
+            //opacity:0.2;
+            //background-image:linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+            //border:1px solid blue;
+            border-radius:10%;
+        }
+        */
+        #profile{
+            width:100%;
+            height:150px;
+            //background:url('static/UserImages/wave1.png');
+            margin-bottom:2px;
+            //background:red;
+            background-repeat:no-repeat;
+            background-size:cover;
+            //object-fit: contain;
+            //object-fit: none;
+            object-fit: scale-up;
+            //object-fit:contain;
+            //background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+            border-radius:15px;
+        }
+        .imgFit{
+            object-fit:contain;
+            object-fit:cover;
+        }
+        h4{
+            font-weight:bold;
+            //font-family:serif;
+            //font-family: 'Libre Baskerville', serif;
+            font-family:'Alice';
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+    </style>
+</head>
+<body class="bd-gradient-primary">
+{% load static %}
+
+  <!--NavBar-->
+<div class="sticky-top">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index">Ewebgo User Profile</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'userProfile' %}">User Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Logout' %}">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Category' %}">Catagory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cart' %}">Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'About' %}">About</a>
+      </li>
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          Dropdown-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="#">Action</a>-->
+<!--          <a class="dropdown-item" href="#">Another action</a>-->
+<!--          <div class="dropdown-divider"></div>-->
+<!--          <a class="dropdown-item" href="#">Something else here</a>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--      </li>-->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+
+<!--    {% if uid %}<center><p style="margin:center; color:blue;font-size:1.5rem;">{{uid}}</p></center>{% endif %}-->
+
+
+
+{% load static %}
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        {% for u in user %}
+        <form class="contact100-form validate-form" method="post" enctype="multipart/form-data">
+            <div id="profile">
+            <div style="width: 100px; height: 100px; background:url('static/form/{{u.User_Image}}'); margin:25px 0px 0px 33%; object-fit:contain; float:left; background-repeat:no-repeat; background-size:cover; border-radius:10%;">
+<!--            <div style="width: 100px; height: 100px; background:url('static/Uploaded/user/{{u.User_Image}}'); margin:25px 0px 0px 33%; object-fit:contain; float:left; background-repeat:no-repeat; background-size:cover; border-radius:10%;">-->
+<!--            <img src="{% static 'Uploaded/' %}{{n.User_Image}}" class="img-thumbnail" style="min-height:160px;" alt="Product image">-->
+            </div></div>
+            <span class="contact100-form-title">
+                Hello {{u.First_Name}} (•◡•)
+            </span>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Name : </span>
+                <h4>{{u.First_Name}} {{u.Last_Name}}</h4>
+                <span class="focus-input100"></span>
+            </div>
+
+            <!--<div class="wrap-input100 validate-input" data-validate="Name is required">-->
+                <!--<span class="label-input100">Last Name : </span>-->
+                <!--<h4>#{{u.LastName}}</h4>-->
+                <!--<span class="focus-input100"></span>-->
+            <!--</div>-->
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Gender : </span>
+                <h4>{{u.Gender}}</h4>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Date of Birth : </span>
+                <h4>{{u.Date_of_Birth}}</h4>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Phone Number : </span>
+                <h4>{{u.Phone_Number}}</h4>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Email id : </span>
+                <h4>{{u.Email_id}}</h4>
+                <span class="focus-input100"></span>
+            </div>
+
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Father's Name : </span>
+                <h4>{{u.Father_Name}}</h4>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Address : </span>
+                <h4>{{u.Address}}</h4>
+                <span class="focus-input100"></span>
+            </div>
+
+        </form>
+        {% endfor %}
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

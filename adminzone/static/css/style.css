@@ -1,0 +1,147 @@
+#outer
+        {
+        height:2400px;
+        width:1450px;
+        //background-color:red;
+        margin:0 auto;
+        }
+        #header
+        {
+        height:125px;
+        width:1450px;
+        //background-color:blue;
+        //border:1px solid black;
+        }
+        #logo
+        {
+        height:125px;
+        width:200px;
+        //background-color:green;
+        float:left;
+        }
+        #banner
+        {
+        height:125px;
+        width:1245px;
+        margin-left:5px;
+        //background-color:#e1bee7;
+        font-size:70px;
+        text-align:center;
+        line-height:125px;
+        text-shadow:3px 5px 7px red;
+        color:white;
+        float:left;
+        border-radius:15px 0 15px 0;
+        background: linear-gradient(#ea80fc, #bbdefb);
+        }
+        #menu
+        {
+        height:48px;
+        width:1450px;
+        border:1px solid white;
+        border-radius:15px 0 15px 0;
+        background-color:white;
+        margin-top:5px;
+        }
+        #menu ul
+        {
+        text-style-type:none;
+        }
+        #menu ul li
+        {
+        display:inline-block;
+        text-align:center;
+        padding:5px 10px 5px 10px;
+        font-size:20px;
+        width:150px;
+        border-radius:10px 0 10px 0;
+        border:1px dashed red;
+        margin-left:15px;
+        margin-top:-15px;
+        }
+        #menu ul li a
+        {
+        color:blue;
+        text-decoration:none;
+        }
+        #menu ul li:hover
+        {
+        background: linear-gradient(#ea80fc, #bbdefb);
+        text-decoration:underline overline;
+        }
+        #slider
+        {
+        height:275px;
+        width:1450px;
+        //background-color:pink;
+        margin-top:5px;
+        }
+        #content
+        {
+        height:850px;
+        width:1450px;
+        //background-color:gray;
+        margin-top:5px;
+        border-radius:15px 0 15px 0;
+        }
+        #left
+        {
+        height:1850px;
+        width:250px;
+        background: linear-gradient(#ea80fc, #bbdefb);
+        float:left;
+        border-radius:15px 0 15px 0;
+        }
+        #main
+        {
+        height:1850px;
+        width:1195px;
+        //background-color:brown;
+        float:left;
+        background: linear-gradient(#ea80fc, #bbdefb);
+        margin-left:5px;
+        border-radius:15px 0 15px 0;
+        }
+        #footer
+        {
+        height:80px;
+        width:1450px;
+        //background-color:black;
+        margin-top:5px;
+        }
+        #lfooter
+        {
+        height:80px;
+        width:725px;
+        line-height:80px;
+        text-align:center;
+        font-size:25px;
+        background-color:black;
+        float:left;
+        color:white;
+        margin-top:5px;
+        border-radius:15px 0 0 0;
+        }
+        #rfooter
+        {
+        height:80px;
+        width:725px;
+        text-align:center;
+        font-size:25px;
+        background-color:black;
+        line-height:80px;
+        float:left;
+        color:white;
+        margin-top:5px;
+        border-radius:0 0 15px 0;
+        }
+        #logoImg{
+        height:125px;
+        width:200px;
+        border-radius:15px 0 15px 0;
+        }
+        #slide{
+        height:275px;
+        width:1450px;
+        border-radius:15px 0 15px 0;
+        }

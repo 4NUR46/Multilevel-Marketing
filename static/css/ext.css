@@ -1,0 +1,89 @@
+.main1{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+.img1 {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  //border:2px solid blue;
+}
+.btn1 {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  align:bottom;
+  border-radius: 7px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  position:bottom;
+  border: 1px solid blue;
+  background: transparent;
+}
+
+.btn1:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cards1 {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item1 {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item1 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item1 {
+    width: 33.3333%;
+  }
+}
+
+.card1 {
+  background-color: white;
+  //background-color: transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content1 {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+  //background: linear-gradient();
+}
+.card_title1 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+.card_text1 {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}

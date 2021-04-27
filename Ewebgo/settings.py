@@ -23,7 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$q^4cpsekn0*$2u=h^^04dt9jpqfi^%xp9yr!^vldn(vng!!n*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+# Change DEBUG = False to hide error correction massages showing to do changes into file.
+# Make DEBUG = True if want to know where we are getting error to correct. This is true by default for getting corrections at development phase.
 
 ALLOWED_HOSTS = [
     'ewebgo.herokuapp.com'

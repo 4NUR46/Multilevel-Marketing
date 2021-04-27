@@ -26,6 +26,7 @@ SECRET_KEY = '$q^4cpsekn0*$2u=h^^04dt9jpqfi^%xp9yr!^vldn(vng!!n*'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1'
     'ewebgo.herokuapp.com'
 ]
 

@@ -117,7 +117,7 @@ _____________________________________________________________________
 - username : *`love`*
 - password : *`anu`*
 
-The above username and password will works only when you install https://github.com/4NUR46/MLM.git repo on your syste and run.
+The above username and password will works only when you install https://github.com/4NUR46/Multilevel-Marketing.git repo on your syste and run.
 But this will not works for my webapp project <a href='https://ewebgo.herokuapp.com/'> Ewebgo Home </a> which is running on heroku.
 I have made that repository private for personal use and for security purpose of the visitors who have register at my webapp.
 The repository of that project is private.
